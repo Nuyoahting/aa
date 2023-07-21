@@ -1,0 +1,15 @@
+驱动下载官网：535版本的nvidia驱动下载
+httpswww.nvidia.cncontentDriverDownloadsconfirmation.phpurl=XFree86Linux-x86_64535.54.03NVIDIA-Linux-x86_64-535.54.03.run&lang=cn&type=TITAN
+
+驱动卸载
+sudo  ./NVIDIA-Linux-x86_64-535.54.03.run -s --uninstall
+
+
+当驱动模块写入内核后，uninstall 不干净，装驱动因占用，安装失败。清理干净后重新安装
+
+lsmod | grep  nvidia    查看是否存在驱动模块
+lsof | grep nvidia      查看占用驱动模块的进程
+kill -9 nvidia的进程号     杀掉所有的驱动进程
+rmmod nvidia            删除驱动模块
+chmod a+x NVIDIA-Linux-x86_64-535.54.03.run    重新安装驱动
+sudo  ./NVIDIA-Linux-x86_64-535.54.03.run -s 

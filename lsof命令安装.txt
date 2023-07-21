@@ -1,0 +1,11 @@
+tar -zxvf lsof_4.76.tar.gz
+cd lsof_4.76
+tar -xvf lsof_4.76_src.tar
+编译安装
+cd lsof_4.76_src
+./Configure linux
+make
+校验安装
+./lsof |grep nvidia
+创建快捷方式
+ln -s /data/lsof_4.76/lsof_4.76_src/lsof /usr/bin
